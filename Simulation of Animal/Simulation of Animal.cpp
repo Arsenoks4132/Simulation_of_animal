@@ -227,7 +227,7 @@ void death(vector<vector<entity>>& animal, float maxAge, float needHung, bool is
 			if (animal[i][j].alive) {
 				int chance = (animal[i][j].age / maxAge) * 100;
 				int rand = gen() % 100;
-				if (rand <= chance && (animal[i][j].hung < needHung)) {
+				if (rand <= chance && (animal[i][j].hung < needHung) || chance == 100) {
 					animal[i][j] = entity();
 					if (ispred) {
 						++preds_die;
@@ -499,7 +499,7 @@ string printStats() {
 }
 
 struct parametrs {
-	int field_size = 50;
+	int field_size = 30;
 	int sim_duration = 30;
 
 	int predator_count = 50;
@@ -516,7 +516,7 @@ struct parametrs {
 	int herbivores_born_chanse = 90;
 	int herbivores_satiety = 6;
 
-	int grass_count = 700;
+	int grass_count = 450;
 
 	int cataclism_event_chanse = 2;
 
@@ -599,8 +599,6 @@ void animals(parametrs p) {
 		for (int month = 1; month <= 12; ++month) {
 
 			if ((month - 1) % 3 == 0) {
-				setHungry(predators, p.predator_satiety / 2);
-				setHungry(herbivores, p.herbivores_satiety / 2);
 				++current_season;
 				if (current_season == 4) {
 					current_season = 0;
@@ -671,6 +669,9 @@ void animals(parametrs p) {
 		if (isExit) {
 			break;
 		}
+		setHungry(predators, p.predator_satiety / 2);
+		setHungry(herbivores, p.herbivores_satiety / 2);
+
 		adulting(predators);
 		adulting(herbivores);
 	}
