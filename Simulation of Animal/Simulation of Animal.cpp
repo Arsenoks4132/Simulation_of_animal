@@ -499,24 +499,24 @@ string printStats() {
 }
 
 struct parametrs {
-	int field_size = 30;
-	int sim_duration = 10;
+	int field_size = 50;
+	int sim_duration = 30;
 
-	int predator_count = 10;
-	int predator_age = 6;
+	int predator_count = 50;
+	int predator_age = 10;
 	int predator_start = 2;
-	int predator_end = 4;
-	int predator_born_chanse = 55;
-	int predator_satiety = 8;
+	int predator_end = 7;
+	int predator_born_chanse = 70;
+	int predator_satiety = 4;
 
-	int herbivores_count = 60;
-	int herbivores_age = 5;
-	int herbivores_start = 1;
-	int herbivores_end = 3;
-	int herbivores_born_chanse = 70;
-	int herbivores_satiety = 10;
+	int herbivores_count = 100;
+	int herbivores_age = 15;
+	int herbivores_start = 3;
+	int herbivores_end = 10;
+	int herbivores_born_chanse = 90;
+	int herbivores_satiety = 6;
 
-	int grass_count = 1000;
+	int grass_count = 700;
 
 	int cataclism_event_chanse = 2;
 
@@ -573,7 +573,6 @@ void animals(parametrs p) {
 
 	fill_with_grass(field, predators, p.grass_count);
 
-
 	ofstream logs("logs.txt");
 
 	string output_text = "";
@@ -586,8 +585,9 @@ void animals(parametrs p) {
 
 	logs << output_text << '\n';
 
+
 	system("cls");
-	cout << output_text;
+	fwrite(output_text.c_str(), 1, output_text.length(), stdout);
 	system("pause");
 	system("cls");
 
@@ -609,6 +609,7 @@ void animals(parametrs p) {
 
 			cataclism(predators, herbivores, field, p.cataclism_event_chanse);
 
+			death(predators, p.predator_age, p.predator_satiety, true);
 			death(herbivores, p.herbivores_age, p.herbivores_satiety, false);
 
 			int grass_recovery_count = (p.grass_count / 5);
@@ -642,21 +643,23 @@ void animals(parametrs p) {
 
 			logs << output_text + output_field << '\n';
 
+			output_text += output_field + '\n';
 			system("cls");
-			cout << output_text + output_field;
+			fwrite(output_text.c_str(), 1, output_text.length(), stdout);
 			Sleep(200);
 
 
 			predators = moving(predators, herbivores, field, true);
 			herbivores = moving(herbivores, predators, field, false);
 
-
+			output_text = "Год: " + to_string(year) + ", Месяц: " + to_string(month) + ", Время года: " + seasons[current_season] + '\n';
 			output_field = show(predators, herbivores, field);
 
 			logs << output_text + output_field << '\n';
 
+			output_text += output_field;
 			system("cls");
-			cout << output_text + output_field;
+			fwrite(output_text.c_str(), 1, output_text.length(), stdout);
 			Sleep(200);
 
 
@@ -670,7 +673,6 @@ void animals(parametrs p) {
 		}
 		adulting(predators);
 		adulting(herbivores);
-		death(predators, p.predator_age, p.predator_satiety, true);
 	}
 
 	if (isExit) {
@@ -685,7 +687,7 @@ void animals(parametrs p) {
 	logs << output_text;
 
 	system("cls");
-	cout << output_text;
+	fwrite(output_text.c_str(), 1, output_text.length(), stdout);
 	system("pause");
 }
 
@@ -702,7 +704,6 @@ int main() {
 		parametrs parms;
 
 		int m = 1000;
-
 		cout << "Введите ширину поля: ";
 		int size = ichek(1, m);
 		parms.field_size = size;
