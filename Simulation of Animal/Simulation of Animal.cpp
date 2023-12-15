@@ -611,20 +611,24 @@ void animals(parametrs p) {
 
 			death(herbivores, p.herbivores_age, p.herbivores_satiety, false);
 
-			//int grass_recovery_count = (p.grass_count / 5);
+			int grass_recovery_count = (p.grass_count / 5);
 
-			//switch (current_season) {
-			//case 0: // Весна
-			//	grass_recovery_count /= 2;
-			//case 1: // Лето
-			//	++grass_recovery_count;
-			//case 2: // Осень
-			//	grass_recovery_count /= 2;
-			//case 3: // Зима
-			//	grass_recovery_count = 0;
-			//}
+			switch (current_season) {
+			case 0: // Весна
+				grass_recovery_count /= 2;
+				break;
+			case 1: // Лето
+				++grass_recovery_count;
+				break;
+			case 2: // Осень
+				grass_recovery_count /= 2;
+				break;
+			case 3: // Зима
+				grass_recovery_count = 0;
+				break;
+			}
 
-			fill_with_grass(field, predators, (p.grass_count / 5));
+			fill_with_grass(field, predators, (grass_recovery_count));
 
 			hunting(predators, herbivores);
 			eating(herbivores, field);
