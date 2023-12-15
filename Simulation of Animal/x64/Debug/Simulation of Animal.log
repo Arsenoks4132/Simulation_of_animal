@@ -1,0 +1,17 @@
+﻿  Simulation of Animal.cpp
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(58,31): warning C4101: e: неиспользованная локальная переменная
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(80,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(98,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(149,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(177,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(224,12): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(228,16): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(246,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(290,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(342,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(415,12): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(612,41): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(612,23): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(669,37): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\Danov\source\repos\Simulation of Animal\Simulation of Animal\Simulation of Animal.cpp(669,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Simulation of Animal.vcxproj -> C:\Users\Danov\source\repos\Simulation of Animal\x64\Debug\Simulation of Animal.exe
